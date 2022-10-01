@@ -1,6 +1,8 @@
+## Machine Learning Code Driver Drowsiness Detection in Python.
 
 #driver drowsiness detection system using python, opencv, dlib
 
+#importing required libraries
 import cv2
 #numpy for array related functins
 import numpy as np
@@ -26,7 +28,7 @@ active = 0
 status = ""
 color = (0,0,0)
 
-
+#defining function in python
 def compute( ptA, ptB ):
     dist = np.linalg.norm(ptA - ptB)
     return dist
@@ -47,6 +49,7 @@ def blinked(a, b, c, d, e, f):
 
 while True:
     frame = cap.read()
+    #converting image to greyscale
     gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
 
     faces = detector(gray)
@@ -101,8 +104,6 @@ while True:
     key = cv2.waitKey(1)
     if (key==27):
         break
-
-            
 
 
          
